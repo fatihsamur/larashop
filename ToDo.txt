@@ -1,0 +1,12 @@
+multiple user roles,
+user auth
+
+User and Product models
+
+
+
+admin : can add products
+
+registered/logged in  user can create shopping cart and buy
+
+enduser can see products
