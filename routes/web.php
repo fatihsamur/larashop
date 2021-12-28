@@ -17,16 +17,15 @@ use Illuminate\Http\Request;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::view("/","home" )->name("home");
+
+Route::get("/products",[productController::class,"getProduct"] );
 
 
-Route::get('/postman/csrf', function (Request $request) {
-	return ["yarağımın başı"=> csrf_token()];
-});
+Route::view("/add_product","add_product" )->name("add_product");
 
 
+Route::post('/save_product', [ProductController::class, 'saveProduct'])->name("save_product");
 
 
-Route::post('/add', [ProductController::class, 'saveProduct']);
