@@ -29,3 +29,9 @@ Route::view("/add_product","add_product" )->name("add_product");
 Route::post('/save_product', [ProductController::class, 'saveProduct'])->name("save_product");
 
 
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+

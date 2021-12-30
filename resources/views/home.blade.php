@@ -11,10 +11,36 @@
     <a href="/products">See Products</a>
   </div>
   <br>
-  <div>
 
+
+
+  @auth
+  // The user is authenticated...
+  <div>
     <a href="/add_product">Add Products</a>
   </div>
+
+
+  <form method="POST" action="{{ route('logout') }}">
+    @csrf
+    <button type="submit">Logout</button>
+  </form>
+
+
+
+  @endauth
+
+  @guest
+  // The user is not authenticated...
+  <div>
+    <a href="/login">Login</a>
+  </div>
+
+
+  @endguest
+
+
+
 
 </body>
 </html>
