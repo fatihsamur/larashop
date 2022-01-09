@@ -45,7 +45,6 @@
        <td>{{ $product->price }}$</td>
        <td>{{ $product->image_path }}</td>
        <td> Edit-Sil</td>
-
      </tr>
 
      @empty

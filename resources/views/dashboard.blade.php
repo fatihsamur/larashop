@@ -1,15 +1,75 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <style>
+     table {
+       font-family: arial, sans-serif;
+       border-collapse: collapse;
+       width: 100%;
+     }
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+     #red {
+       padding: auto;
+       text-align: center;
+     }
+
+     td,
+     th {
+       border: 1px solid #dddddd;
+       text-align: left;
+       padding: 8px;
+     }
+
+     tr:nth-child(even) {
+       background-color: #dddddd;
+     }
+
+   </style>
+ </head>
+ <body>
+
+   <h2>Products List</h2>
+
+   <table>
+     <tr>
+       <th>Product Name</th>
+       <th>Description</th>
+       <th>Price</th>
+       <th>Image Path</th>
+       <th> Buttonlar </th>
+     </tr>
+     @forelse ($products as $product)
+     <tr>
+       <td>{{ $product->name }}</td>
+       <td>{{ $product->description }}</td>
+       <td>{{ $product->price }}$</td>
+       <td>{{ $product->image_path }}</td>
+       <td>
+         <button>
+           <a href='/delete_product/{{ $product->id }}'>Delete Product</a>
+         </button>
+
+         {{ $product->id }}
+
+       </td>
+     </tr>
+
+     @empty
+
+     @endforelse
+
+
+   </table>
+   <br><br>
+   <div id="red">
+
+
+     <a href='{{ route('add_product') }}'>Add New Product</a>
+     <br><br>
+     <a href='{{ route('home') }}'>Home</a>
+
+   </div>
+
+
+ </body>
+ </html>

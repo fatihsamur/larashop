@@ -18,7 +18,9 @@ use Illuminate\Http\Request;
 
 
 
-Route::view("/","home" )->name("home");
+
+
+Route::get("/",[productController::class,"index"] )->name("home");
 
 Route::get("/products",[productController::class,"getProduct"] );
 
@@ -28,10 +30,10 @@ Route::view("/add_product","add_product" )->name("add_product");
 
 Route::post('/save_product', [ProductController::class, 'saveProduct'])->name("save_product");
 
+Route::get('/delete_product/{id}', [ProductController::class,'deleteProduct'] )->name("delete_product");
 
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [ProductController::class, 'dashboardPage' ])->name('dashboard');
 
