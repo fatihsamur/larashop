@@ -15,25 +15,35 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/dashboard', [ProductController::class, 'dashboardPage'])
+    ->name('dashboard');
 
+Route::get("/", [productController::class, "index"])->name("home");
 
+Route::get("/products", [productController::class, "getProduct"]);
 
+Route::view("/add_product", "add_product")->name("add_product");
 
+Route::post('/save_product', [ProductController::class, 'saveProduct'])->name(
+    "save_product"
+);
 
-Route::get("/",[productController::class,"index"] )->name("home");
+Route::get('/delete_product/{id}', [
+    ProductController::class,
+    'deleteProduct',
+])->name("delete_product");
 
-Route::get("/products",[productController::class,"getProduct"] );
+Route::get('/edit_product/{id}', [
+    ProductController::class,
+    'editProduct',
+])->name("edit_product");
 
+Route::post('/update_product/{id}', [
+    ProductController::class,
+    'updateProduct',
+])->name("update_product");
 
-Route::view("/add_product","add_product" )->name("add_product");
-
-
-Route::post('/save_product', [ProductController::class, 'saveProduct'])->name("save_product");
-
-Route::get('/delete_product/{id}', [ProductController::class,'deleteProduct'] )->name("delete_product");
-
-
-
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [ProductController::class, 'dashboardPage' ])->name('dashboard');
-
+Route::get('shoppingcart', [ProductController::class, 'getShoppingCart'])->name(
+    'shoppingcart'
+);

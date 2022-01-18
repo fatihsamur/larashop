@@ -26,6 +26,7 @@
 
    </style>
  </head>
+
  <body>
 
    <h2>Products List</h2>
@@ -35,7 +36,6 @@
        <th>Product Name</th>
        <th>Description</th>
        <th>Price</th>
-       <th>Image Path</th>
        <th> Buttonlar </th>
      </tr>
      @forelse ($products as $product)
@@ -43,10 +43,14 @@
        <td>{{ $product->name }}</td>
        <td>{{ $product->description }}</td>
        <td>{{ $product->price }}$</td>
-       <td>{{ $product->image_path }}</td>
+
        <td>
          <button>
-           <a href='/delete_product/{{ $product->id }}'>Delete Product</a>
+           <a href='/delete_product/{{ $product->id }}'>Delete </a>
+         </button>
+
+         <button>
+           <a href='/edit_product/{{ $product->id }}'>Update </a>
          </button>
 
          {{ $product->id }}
