@@ -46,6 +46,8 @@
             <div class="mt-8">
               <div class="flow-root">
                 <ul role="list" class="-my-6 divide-y divide-gray-200">
+
+
                   <li class="py-6 flex">
                     <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
                       <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="w-full h-full object-center object-cover">
@@ -79,38 +81,12 @@
                     </div>
                   </li>
 
-                  <li class="py-6 flex">
-                    <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-                      <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="w-full h-full object-center object-cover">
-                    </div>
 
-                    <div class="ml-4 flex-1 flex flex-col">
-                      <div>
-                        <div class="flex justify-between text-base font-medium text-gray-900">
-                          <h3>
-                            <a href="#">
-                              Medium Stuff Satchel
-                            </a>
-                          </h3>
-                          <p class="ml-4">
-                            $32.00
-                          </p>
-                        </div>
-                        <p class="mt-1 text-sm text-gray-500">
-                          Blue
-                        </p>
-                      </div>
-                      <div class="flex-1 flex items-end justify-between text-sm">
-                        <p class="text-gray-500">
-                          Qty 1
-                        </p>
 
-                        <div class="flex">
-                          <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
+
+
+
+
 
                   <!-- More products... -->
                 </ul>
