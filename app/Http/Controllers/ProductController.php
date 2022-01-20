@@ -36,7 +36,6 @@ class ProductController extends Controller
             'price' => 'required',
             'image_path' => 'required',
         ]);
-        //dd($request);
         $product = new Product();
         $product->name = $request->input('name');
         $product->description = $request->input('description');
@@ -91,12 +90,5 @@ class ProductController extends Controller
         } else {
             dd("yok öyle bişe");
         }
-    }
-
-    public function getShoppingCart()
-    {
-        $products = DB::table("products")->get();
-
-        return view('shoppingcart', compact('products'));
     }
 }

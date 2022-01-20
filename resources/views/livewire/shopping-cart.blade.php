@@ -1,28 +1,10 @@
 <div class="  @if(!$showDiv) hidden @endif  fixed inset-0 overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
   <div class="absolute inset-0 overflow-hidden">
-    <!--
-      Background overlay, show/hide based on slide-over state.
 
-      Entering: "ease-in-out duration-500"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "ease-in-out duration-500"
-        From: "opacity-100"
-        To: "opacity-0"
-    -->
     <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
     <div class="fixed inset-y-0 right-0 pl-10 max-w-full flex">
-      <!--
-        Slide-over panel, show/hide based on slide-over state.
 
-        Entering: "transform transition ease-in-out duration-500 sm:duration-700"
-          From: "translate-x-full"
-          To: "translate-x-0"
-        Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
-          From: "translate-x-0"
-          To: "translate-x-full"
-      -->
       <div class="w-screen max-w-md">
         <div class="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
           <div class="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
@@ -32,8 +14,6 @@
               </h2>
               <div class="ml-3 h-7 flex items-center">
                 <button wire:click="openDiv" type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
-
-
                   <span class="sr-only">Close panel</span>
                   <!-- Heroicon name: outline/x -->
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -47,6 +27,7 @@
               <div class="flow-root">
                 <ul role="list" class="-my-6 divide-y divide-gray-200">
 
+                  @forelse($cartItems as $cartItem)
 
                   <li class="py-6 flex">
                     <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
@@ -58,20 +39,18 @@
                         <div class="flex justify-between text-base font-medium text-gray-900">
                           <h3>
                             <a href="#">
-                              Throwback Hip Bag
+                              {{ $cartItem->name }}
                             </a>
                           </h3>
                           <p class="ml-4">
-                            $90.00
+                            {{ $cartItem->price }}
                           </p>
                         </div>
-                        <p class="mt-1 text-sm text-gray-500">
-                          Salmon
-                        </p>
+
                       </div>
                       <div class="flex-1 flex items-end justify-between text-sm">
                         <p class="text-gray-500">
-                          Qty 1
+                          {{ $cartItem->qty }}
                         </p>
 
                         <div class="flex">
@@ -82,9 +61,9 @@
                   </li>
 
 
+                  @empty
 
-
-
+                  @endforelse
 
 
 

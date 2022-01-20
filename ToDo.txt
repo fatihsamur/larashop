@@ -12,4 +12,6 @@ registered/logged in  user can create shopping cart and buy
 enduser can see products
 todo - faker la data püskülle
 
-** loop through cart items
+** loop through cart items - done
+
+event emit can not listen

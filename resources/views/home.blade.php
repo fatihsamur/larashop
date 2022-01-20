@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-@include('includes.productList')
+@livewire('product-list')
 @livewire('shopping-cart')
 
 @stop

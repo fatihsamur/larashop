@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Livewire\ShoppingCart;
 use Illuminate\Http\Request;
 
 /*
@@ -45,10 +46,5 @@ Route::post('/update_product/{id}', [
     'updateProduct',
 ])->name("update_product");
 
-Route::get('shoppingcart', [ProductController::class, 'getShoppingCart'])->name(
-    'shoppingcart'
-);
-
-Route::post('cartHome', [CartController::class, 'storeCart'])->name(
-    'storeCart'
-);
+// cart routes
+Route::post('cartHome', [ShoppingCart::class, 'storeCart'])->name('storeCart');
