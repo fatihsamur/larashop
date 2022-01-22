@@ -47,4 +47,4 @@ Route::post('/update_product/{id}', [
 ])->name("update_product");
 
 // cart routes
-Route::post('cartHome', [ShoppingCart::class, 'storeCart'])->name('storeCart');
+Route::get('cartHome', [ShoppingCart::class, 'storeCart'])->name('storeCart');

@@ -11,11 +11,7 @@ class ShoppingCart extends Component
 {
     public $showDiv = false;
 
-    protected $listeners = ['postAdded' => 'openDiv', 'saved' => 'yazdır'];
-    public function yazdır()
-    {
-        dd("anan");
-    }
+    protected $listeners = ['postAdded' => 'openDiv'];
 
     // change shopping cart visibility status
     public function openDiv()
@@ -34,10 +30,14 @@ class ShoppingCart extends Component
     {
         $product = Product::findOrFail($request->input('product_id'));
         Cart::add($product->id, $product->name, 1, $product->price, 500);
-        $this->emit('saved');
 
         return redirect()
             ->route("home")
             ->with("message", "Product added to Cart Succesfully!");
+    }
+
+    public function showAlert()
+    {
+        dd("anan anan");
     }
 }

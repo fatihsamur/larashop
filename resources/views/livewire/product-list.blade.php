@@ -1,16 +1,20 @@
 <div>
   <div class="bg-white">
+    @if(session('message'))
 
-
-    <div x-data="{show:false}" x-show="show" x-init="@this.on('saved', ()=> {alert; show = true; setTimeout(() => {show=false;}, 1000) })" role="alert">
-
-
-      {{ session("message") }}
-
+    <div x-data="{show: true}" x-init="setTimeout(() => show = false, 1500)" x-show="show" class="fixed right-0 mr-3 top-2 mt-3 h-16 w-50 p-4  text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800">
+      {{ session('message') }}
     </div>
 
 
-    {{-- class="fixed right-0 mr-3 top-2 mt-3 h-16 w-50 p-4  text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" --}}
+    @endif
+
+    <div x-data="{show:false}">
+      <div x-show="show" x-init="@this.on('saved', ()=> { alert('Product added to Cart Succesfully!') })" role="alert" style="display:none" class="fixed right-0 mr-3 top-2 mt-3 h-16 w-50 p-4  text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800">
+      </div>
+    </div>
+
+
 
     <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
       <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Products</h2>
@@ -44,10 +48,12 @@
           </div>
 
           <div>
-            <form action=" {{ route("storeCart") }} " method="POST">
+            <form action=" {{ route("storeCart") }} " method=" POST">
+
               @csrf
               <input type="hidden" name="product_id" value="{{ $product->id }}">
               <button type="submit" class="px-6 py-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+
                 Add to cart
               </button>
             </form>

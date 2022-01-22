@@ -1,9 +1,3 @@
-multiple user roles,
-user auth
-
-User and Product models
-
-
 
 admin : can add products
 
@@ -14,4 +8,10 @@ todo - faker la data püskülle
 
 ** loop through cart items - done
 
-event emit can not listen
+event emit can not listen - done
+
+shopping cartta
+qty yazan yerden sayısını değiştirilebilsin
+cart item silinebilsin
+
+checkout sistemiyle sandboxtan ödeme yapılabilsin
