@@ -11,7 +11,10 @@ class ShoppingCart extends Component
 {
     public $showDiv = false;
 
-    protected $listeners = ['postAdded' => 'openDiv'];
+    protected $listeners = [
+        'postAdded' => 'openDiv',
+        'bokAlert(x)' => 'cartItemQty(i)',
+    ];
 
     // change shopping cart visibility status
     public function openDiv()
@@ -19,6 +22,13 @@ class ShoppingCart extends Component
         $this->showDiv = !$this->showDiv;
     }
 
+    public function closeDiv()
+    {
+        $this->showDiv = !$this->showDiv;
+        return redirect()->route("home");
+    }
+
+    // get content of the cart
     public function render()
     {
         return view('livewire.shopping-cart', [
@@ -26,6 +36,7 @@ class ShoppingCart extends Component
         ]);
     }
 
+    // add item to cart
     public function storeCart(Request $request)
     {
         $product = Product::findOrFail($request->input('product_id'));
@@ -36,8 +47,21 @@ class ShoppingCart extends Component
             ->with("message", "Product added to Cart Succesfully!");
     }
 
-    public function showAlert()
+    public function cartItemQty($val)
     {
-        dd("anan anan");
+        //Cart::update($rowId, 5);
+        dd($val);
+        return redirect()->route("home");
+    }
+
+    // remove item from cart
+    public function cartItemRmv($rowId)
+    {
+        Cart::remove($rowId);
+    }
+
+    public function alert()
+    {
+        dd("bok ye");
     }
 }

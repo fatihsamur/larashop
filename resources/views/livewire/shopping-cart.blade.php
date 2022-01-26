@@ -13,7 +13,7 @@
                 Shopping cart
               </h2>
               <div class="ml-3 h-7 flex items-center">
-                <button wire:click="openDiv" type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                <button wire:click="closeDiv" type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                   <span class="sr-only">Close panel</span>
                   <!-- Heroicon name: outline/x -->
                   <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -37,6 +37,7 @@
                     <div class="ml-4 flex-1 flex flex-col">
                       <div>
                         <div class="flex justify-between text-base font-medium text-gray-900">
+
                           <h3>
                             <a href="#">
                               {{ $cartItem->name }}
@@ -49,19 +50,28 @@
 
                       </div>
                       <div class="flex-1 flex items-end justify-between text-sm">
+
+
+                        {{-- <input wire:change="cartItemQty('{{ $cartItem->rowId }}')" type="number" name=" {{ $cartItem->rowId }}" value="{{ $cartItem->qty }}"> --}}
+
+
                         <p class="text-gray-500">
-                          {{ $cartItem->qty }}
+                          qty: {{ $cartItem->qty }}
+
                         </p>
 
                         <div class="flex">
-                          <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                          <button wire:click="cartItemRmv('{{ $cartItem->rowId }}')" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
                         </div>
+
                       </div>
                     </div>
                   </li>
 
 
                   @empty
+
+                  <h3>Ooops! Your Card Is Empty</h3>
 
                   @endforelse
 
@@ -76,15 +86,16 @@
           <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
             <div class="flex justify-between text-base font-medium text-gray-900">
               <p>Subtotal</p>
-              <p>$262.00</p>
+              <p> {{ \Gloudemans\Shoppingcart\Facades\Cart::priceTotal(); }} </p>
+
             </div>
-            <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
             <div class="mt-6">
               <a href="#" class="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">Checkout</a>
             </div>
             <div class="mt-6 flex justify-center text-sm text-center text-gray-500">
               <p>
-                or <button type="button" class="text-indigo-600 font-medium hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                or <button wire:click="closeDiv" type="button" class="text-indigo-600 font-medium hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+
               </p>
             </div>
           </div>
