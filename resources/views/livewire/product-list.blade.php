@@ -31,7 +31,7 @@
             </div>
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-sm text-gray-700">
+                <h3 class="text-sm text-gray-900">
                   <a href="#">
                     <span aria-hidden="true" class="absolute inset-0"></span>
                     {{ $product->name }}
@@ -41,9 +41,12 @@
                   {{ $product->description }}
                 </p>
               </div>
-              <p class="text-sm font-medium text-gray-900">$
-                {{ $product->price }}
-              </p>
+              <div>
+                <p class="text-sm font-medium text-gray-900">${{ $product->price }}
+                </p>
+
+              </div>
+
             </div>
           </div>
 
@@ -63,10 +66,19 @@
         </div>
 
         @empty
-        @endforelse
+        <div class="text-center">
+          <h1 class="text-gray-900">No Products Available</h1>
+          @endforelse
+        </div>
+
+
+        <div class="flex justify-center mt-6">
+
+          {{ $products->links() }}
+
+        </div>
       </div>
     </div>
+
+
   </div>
-
-
-</div>

@@ -1,17 +1,23 @@
 
-admin : can add products
+admin : can add products -done
 
 user can create shopping cart and buy - done
 
 enduser can see products - done
-todo - faker la data püskülle
+
+faker la data püskülle  -done
 
 ** loop through cart items - done
 
 event emit can not listen - done
 
 shopping cartta
-qty yazan yerden sayısını değiştirilebilsin
+qty yazan yerden sayısını değiştirilebilsin -done
 cart item silinebilsin - done
 
+product page -> pagination -done
+
 checkout sistemiyle sandboxtan ödeme yapılabilsin
+add product category 
+
+

@@ -944,6 +944,43 @@ select {
 .prose > :where(:last-child):not(:where([class~="not-prose"] *)) {
   margin-bottom: 0;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+.pagination .page-item .page-link {
+  padding: .75rem;
+  display: block;
+  text-decoration: none;
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+  background-color: #ffffff;
+  color: #2779BD;
+}
+.pagination .page-item .page-link:hover {
+  background-color: #f1f5f8;
+}
+.pagination .page-item:first-child .page-link {
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+}
+.pagination .page-item:last-child .page-link {
+  border-right-width: 1px;
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}
+.pagination .page-item.active .page-link {
+  background-color: #2779BD;
+  border-color: #2779BD;
+  color: #ffffff;
+}
+.pagination .page-item.disabled .page-link {
+  background-color: #f1f5f8;
+  color: #8795a1;
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -980,6 +1017,9 @@ select {
 .right-0 {
   right: 0px;
 }
+.top-2 {
+  top: 0.5rem;
+}
 .top-0 {
   top: 0px;
 }
@@ -994,6 +1034,9 @@ select {
 }
 .-m-2 {
   margin: -0.5rem;
+}
+.m-auto {
+  margin: auto;
 }
 .mx-auto {
   margin-left: auto;
@@ -1188,6 +1231,9 @@ select {
 }
 .w-24 {
   width: 6rem;
+}
+.w-32 {
+  width: 8rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -1398,6 +1444,14 @@ select {
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+.rounded-l {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.rounded-r {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
 .border {
   border-width: 1px;
 }
@@ -1494,13 +1548,20 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
+.bg-green-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
-.bg-green-100 {
+.bg-transparent {
+  background-color: transparent;
+}
+.bg-gray-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -1678,6 +1739,9 @@ select {
 .font-extrabold {
   font-weight: 800;
 }
+.font-thin {
+  font-weight: 100;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -1819,6 +1883,10 @@ select {
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
 .ring-1 {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1914,6 +1982,10 @@ select {
 .hover\:bg-indigo-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
+}
+.hover\:bg-gray-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;

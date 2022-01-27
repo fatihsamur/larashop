@@ -51,21 +51,36 @@
                       </div>
                       <div class="flex-1 flex items-end justify-between text-sm">
 
+                        <div class="custom-number-input h-10 w-32">
 
-                        {{-- <input wire:change="cartItemQty('{{ $cartItem->rowId }}')" type="number" name=" {{ $cartItem->rowId }}" value="{{ $cartItem->qty }}"> --}}
+                          <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+
+                            <button wire:click="cartItemQtyDown('{{ $cartItem->rowId }}')" class=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                              <span class="m-auto text-2xl font-thin">−</span>
+                            </button>
+
+                            <h2> {{ $cartItem->qty }} </h2>
 
 
-                        <p class="text-gray-500">
-                          qty: {{ $cartItem->qty }}
 
-                        </p>
+                            <button wire:click="cartItemQtyUp('{{ $cartItem->rowId }}')" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                              <span class="m-auto text-2xl font-thin">+</span>
+                            </button>
 
-                        <div class="flex">
-                          <button wire:click="cartItemRmv('{{ $cartItem->rowId }}')" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+
+
+                            {{-- <input wire:change="qtyUpdate({{ $cartItem->rowId }})" wire:model="itemQty" type="number">
+
+                            <br>
+                            <h2> qty: {{ $itemQty }} </h2> --}}
+
+
+                            <div class="flex">
+                              <button wire:click="cartItemRmv('{{ $cartItem->rowId }}')" type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
+                            </div>
+
+                          </div>
                         </div>
-
-                      </div>
-                    </div>
                   </li>
 
 

@@ -10,6 +10,7 @@ use Livewire\Component;
 class ShoppingCart extends Component
 {
     public $showDiv = false;
+    public $itemQty = 1;
 
     protected $listeners = [
         'postAdded' => 'openDiv',
@@ -47,11 +48,18 @@ class ShoppingCart extends Component
             ->with("message", "Product added to Cart Succesfully!");
     }
 
-    public function cartItemQty($val)
+    public function cartItemQtyUp($val)
     {
-        //Cart::update($rowId, 5);
-        dd($val);
-        return redirect()->route("home");
+        $cartItem = Cart::get($val);
+        $cartItem->qty = $cartItem->qty + 1;
+        Cart::update($val, $cartItem->qty);
+    }
+
+    public function cartItemQtyDown($val)
+    {
+        $cartItem = Cart::get($val);
+        $cartItem->qty = $cartItem->qty - 1;
+        Cart::update($val, $cartItem->qty);
     }
 
     // remove item from cart
