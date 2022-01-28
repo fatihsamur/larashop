@@ -36,6 +36,7 @@
        <th>Product Name</th>
        <th>Description</th>
        <th>Price</th>
+       <th>Category</th>
        <th> Buttonlar </th>
      </tr>
      @forelse ($products as $product)
@@ -43,6 +44,8 @@
        <td>{{ $product->name }}</td>
        <td>{{ $product->description }}</td>
        <td>{{ $product->price }}$</td>
+       <td>{{ $product->category->name }}</td>
+
 
        <td>
          <button>

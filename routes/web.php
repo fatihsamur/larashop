@@ -24,9 +24,10 @@ Route::middleware(['auth:sanctum', 'verified'])
 
 Route::get("/", [productController::class, "index"])->name("home");
 
-Route::get("/products", [productController::class, "getProduct"]);
-
-Route::view("/add_product", "add_product")->name("add_product");
+// admin routes
+Route::get("/add_product", [productController::class, 'addProductPage'])->name(
+    "add_product"
+);
 
 Route::post('/save_product', [ProductController::class, 'saveProduct'])->name(
     "save_product"
@@ -61,3 +62,15 @@ Route::get('/single_category/{id}', [
     CategoryController::class,
     'getSingleCategory',
 ])->name('single_category');
+
+// add new category
+Route::post('/save_category', [
+    CategoryController::class,
+    'saveCategory',
+])->name('save_category');
+
+// add category page
+Route::get('/add_category', [
+    CategoryController::class,
+    'addCategoryPage',
+])->name('add_category');

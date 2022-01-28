@@ -10,15 +10,16 @@ faker la data püskülle  -done
 
 event emit can not listen - done
 
-shopping cartta
+shopping cartta-->
 qty yazan yerden sayısını değiştirilebilsin -done
 cart item silinebilsin - done
 
 product page -> pagination -done
 
-add product category 
+add product category-->
+admin can add category -done
+admin can edit-delete-update category 
 categoriye tıklayınca ilgili productlar gelecek
-admin can add-edit-delete-update category
 
 
 product search bar
@@ -26,3 +27,5 @@ product search bar
 checkout sistemiyle sandboxtan ödeme yapılabilsin
 
 dashboard frontendi toparlanacak -> tailwind componentle
+
+routelara auth yap admin ulaşacağı routelar

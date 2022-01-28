@@ -17,10 +17,21 @@
       <label for="price">Price:</label>
       <input type="text" name="price" value={{ $product->price }}><br><br>
 
-      <label for="image_path">Image Path:</label>
+      <label for="image_path">Image Link:</label>
       <input type="text" name="image_path" value={{ $product->image_path }}><br><br>
 
-      <input type="submit" value="Submit">
+      <label for="category_id">Category:</label>
+      <select name="category_id">
+
+        @forelse($categories as $category)
+        <option value="{{ $category->id }}">{{ $category->name }}</option>
+
+        @empty
+
+        @endforelse
+
+
+        <input type="submit" value="Submit">
 
     </fieldset>
   </form>
