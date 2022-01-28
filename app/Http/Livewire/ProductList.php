@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -12,10 +13,7 @@ class ProductList extends Component
 
     public function render()
     {
-        return view('livewire.product-list', [
-            'products' => DB::table('products')
-                ->orderBy('created_at', 'desc')
-                ->paginate(12),
-        ]);
+        $products = Product::with('category')->paginate(12);
+        return view('livewire.product-list', ['products' => $products]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
@@ -12,22 +13,22 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = DB::table("products")->get();
-        return view('home', compact('products'));
+        return view('home');
     }
+
+    /*  */
+    /*  */
+    // admin routes //
+    /*  */
+    /*  */
 
     public function dashboardPage()
     {
-        $products = DB::table("products")->get();
+        $products = Product::with('category')->get();
         return view('dashboard', compact('products'));
     }
 
-    public function getProduct()
-    {
-        $products = DB::table("products")->get();
-        return view('products', compact('products'));
-    }
-
+    // add new product
     public function saveProduct(Request $request)
     {
         $this->validate($request, [
@@ -45,6 +46,7 @@ class ProductController extends Controller
         return redirect('/dashboard');
     }
 
+    // delete product
     public function deleteProduct(Request $request)
     {
         $product_id = $request->id;
@@ -57,6 +59,7 @@ class ProductController extends Controller
         }
     }
 
+    // edit product
     public function editProduct(Request $request)
     {
         $product_id = $request->id;
@@ -68,6 +71,7 @@ class ProductController extends Controller
         }
     }
 
+    // update product
     public function updateProduct(Request $request)
     {
         $product_id = $request->id;

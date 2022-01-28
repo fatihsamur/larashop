@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Livewire\ShoppingCart;
@@ -48,3 +49,15 @@ Route::post('/update_product/{id}', [
 
 // shoppingCart routes
 Route::get('cartHome', [ShoppingCart::class, 'storeCart'])->name('storeCart');
+
+// category routes
+//get all categories
+Route::get('/categories', [CategoryController::class, 'getCategory'])->name(
+    'categories'
+);
+
+//get single category
+Route::get('/single_category/{id}', [
+    CategoryController::class,
+    'getSingleCategory',
+])->name('single_category');

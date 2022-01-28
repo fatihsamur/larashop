@@ -1,4 +1,3 @@
-
 admin : can add products -done
 
 user can create shopping cart and buy - done
@@ -17,7 +16,13 @@ cart item silinebilsin - done
 
 product page -> pagination -done
 
-checkout sistemiyle sandboxtan ödeme yapılabilsin
 add product category 
+categoriye tıklayınca ilgili productlar gelecek
+admin can add-edit-delete-update category
 
 
+product search bar
+
+checkout sistemiyle sandboxtan ödeme yapılabilsin
+
+dashboard frontendi toparlanacak -> tailwind componentle

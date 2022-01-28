@@ -20,6 +20,12 @@ class CreateProductTable extends Migration
             $table->text('description');
             $table->integer('price');
             $table->string('image_path');
+            $table->unsignedBigInteger('category_id');
+            $table
+                ->foreign('category_id')
+                ->references('id')
+                ->on('categories')
+                ->onDelete('cascade');
         });
     }
 

@@ -47,6 +47,13 @@
 
               </div>
 
+              <div>
+                <p class="text-sm font-medium text-gray-900">cat:{{ $product->category->name }}
+
+                </p>
+
+              </div>
+
             </div>
           </div>
 
