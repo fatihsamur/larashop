@@ -63,14 +63,32 @@ Route::get('/single_category/{id}', [
     'getSingleCategory',
 ])->name('single_category');
 
-// add new category
-Route::post('/save_category', [
-    CategoryController::class,
-    'saveCategory',
-])->name('save_category');
-
 // add category page
 Route::get('/add_category', [
     CategoryController::class,
     'addCategoryPage',
 ])->name('add_category');
+
+// add new category function
+Route::post('/save_category', [
+    CategoryController::class,
+    'saveCategory',
+])->name('save_category');
+
+// delete category function
+Route::get('/delete_category/{id}', [
+    CategoryController::class,
+    'deleteCategory',
+])->name('delete_category');
+
+// edit category page
+Route::get('/edit_category/{id}', [
+    CategoryController::class,
+    'updateCategoryPage',
+])->name('edit_category');
+
+// update category function
+Route::post('/update_category/{id}', [
+    CategoryController::class,
+    'updateCategory',
+])->name('update_category');

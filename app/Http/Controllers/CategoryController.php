@@ -35,6 +35,41 @@ class CategoryController extends Controller
         $category = new Category();
         $category->name = $request->input('name');
         $category->save();
-        return redirect('/dashboard');
+        return redirect('/categories');
+    }
+
+    // delete category function
+    public function deleteCategory($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+        return redirect('/categories');
+    }
+    // edit category page
+    public function updateCategoryPage($id)
+    {
+        $category = Category::find($id);
+        if ($category) {
+            return view('edit_category', compact('category'));
+        } else {
+            dd("yok öyle bişe");
+        }
+    }
+
+    // update category function
+    public function updateCategory(Request $request)
+    {
+        $category_id = $request->id;
+        $category = Category::find($category_id);
+        if ($category) {
+            $this->validate($request, [
+                'name' => 'required',
+            ]);
+            $category->name = $request->input('name');
+            $category->update();
+            return redirect('/categories');
+        } else {
+            dd("yok öyle bişe");
+        }
     }
 }

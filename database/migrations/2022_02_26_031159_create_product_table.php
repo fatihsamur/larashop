@@ -23,8 +23,10 @@ class CreateProductTable extends Migration
             $table->unsignedBigInteger('category_id');
             $table
                 ->foreign('category_id')
+                ->constrained('categories')
                 ->references('id')
                 ->on('categories')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
     }

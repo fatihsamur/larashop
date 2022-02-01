@@ -18,8 +18,11 @@ product page -> pagination -done
 
 add product category-->
 admin can add category -done
-admin can edit-delete-update category 
+admin can edit-delete-update category -done
+
+admin can see categories list -done
 categoriye tıklayınca ilgili productlar gelecek
+faker a category ekle
 
 
 product search bar

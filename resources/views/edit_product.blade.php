@@ -2,12 +2,12 @@
 <html>
 <body>
 
-  <h1>Add New Product</h1>
+  <h1>Update Product</h1>
 
   <form method="post" action="/update_product/{{ $product->id }}">
 
     <fieldset>
-      <legend>Add Product:</legend>
+      <legend>Update Product:</legend>
       <label for="name">Product Name:</label>
       <input type="text" name="name" value={{ $product->name }}><br><br>
 

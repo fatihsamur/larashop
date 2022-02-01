@@ -73,7 +73,9 @@
 
      <a href='{{ route('add_product') }}'>Add New Product</a>
      <br><br>
-     <a href='{{ route('home') }}'>Home</a>
+     <a href='{{ route('categories') }}'>Categories</a>
+     <br><br>
+     <a href='{{ route('home') }}'>Home Page</a>
 
    </div>
 
