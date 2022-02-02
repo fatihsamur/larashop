@@ -19,17 +19,20 @@ product page -> pagination -done
 add product category-->
 admin can add category -done
 admin can edit-delete-update category -done
-
 admin can see categories list -done
 
-categoriye tıklayınca ilgili productlar gelecek
-categoriler için link konulacak
-crashed photolara default image gösterilecek
+categoriye tıklayınca ilgili productlar gelecek -done
+categoriler için link konulacak -done
+crashed photolara default image gösterilecek - (single cat page'de hata var) -done
 
-single category sayfasında add shop yapınca oraya redirect edebilsin.
+single category sayfasında add shop yapınca oraya redirect edebilsin. hangi
+ sayfadaysa o sayfaya redirect etsin !! -done
 
 
-faker a category ekle
+
+single product page yapılacak...
+
+faker a category eklenecek
 
 
 product search bar

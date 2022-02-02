@@ -14,7 +14,6 @@ class ShoppingCart extends Component
 
     protected $listeners = [
         'postAdded' => 'openDiv',
-        'bokAlert(x)' => 'cartItemQty(i)',
     ];
 
     // change shopping cart visibility status
@@ -23,10 +22,11 @@ class ShoppingCart extends Component
         $this->showDiv = !$this->showDiv;
     }
 
-    public function closeDiv()
+    public function closeDiv(Request $request)
     {
+        $url = request()->headers->get('referer');
         $this->showDiv = !$this->showDiv;
-        return redirect()->route("home");
+        return redirect()->to($url);
     }
 
     // get content of the cart
@@ -40,11 +40,12 @@ class ShoppingCart extends Component
     // add item to cart
     public function storeCart(Request $request)
     {
+        $url = request()->headers->get('referer');
         $product = Product::findOrFail($request->input('product_id'));
         Cart::add($product->id, $product->name, 1, $product->price, 500);
 
         return redirect()
-            ->route("home")
+            ->to($url)
             ->with("message", "Product added to Cart Succesfully!");
     }
 
