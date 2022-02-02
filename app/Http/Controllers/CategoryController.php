@@ -17,7 +17,9 @@ class CategoryController extends Controller
     public function getSingleCategory($id)
     {
         $category = Category::find($id);
-        return view('single_category', compact('category'));
+        $products = $category->products->toArray();
+
+        return view('single_category', compact('category', 'products'));
     }
 
     // add category page

@@ -1,6 +1,11 @@
 @extends('layouts.default')
 @section('content')
 
-{{ $category->name }}
+
+
+@livewire('single-category-product-list', ['category' => $category, 'products' => $products])
+
+@livewire('shopping-cart')
+
 
 @stop

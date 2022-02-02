@@ -69,7 +69,11 @@
 
      <a href='{{ route('add_category') }}'>Add New Category</a>
      <br><br>
+
      <a href='{{ route('home') }}'>Home</a>
+     <br><br>
+
+     <a href='{{ route('dashboard') }}'>Products</a>
 
    </div>
  </body>

@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Livewire\ShoppingCart;
+use App\Http\Livewire\SingleCategoryProductList;
 use Illuminate\Http\Request;
 
 /*
@@ -57,7 +58,7 @@ Route::get('/categories', [CategoryController::class, 'getCategory'])->name(
     'categories'
 );
 
-//get single category
+//get single category products
 Route::get('/single_category/{id}', [
     CategoryController::class,
     'getSingleCategory',

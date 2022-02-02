@@ -21,7 +21,14 @@ admin can add category -done
 admin can edit-delete-update category -done
 
 admin can see categories list -done
+
 categoriye tıklayınca ilgili productlar gelecek
+categoriler için link konulacak
+crashed photolara default image gösterilecek
+
+single category sayfasında add shop yapınca oraya redirect edebilsin.
+
+
 faker a category ekle
 
 

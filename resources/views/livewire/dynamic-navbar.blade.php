@@ -10,7 +10,8 @@
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               @auth
-              <a href="dashboard" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+              <a href="{{ route('dashboard')}}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
+
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Logout</button>
