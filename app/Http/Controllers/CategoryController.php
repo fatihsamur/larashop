@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -13,13 +14,12 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('categories', compact('categories'));
     }
-    // get single category
+    // get single category by id with products
     public function getSingleCategory($id)
     {
         $category = Category::find($id);
-        $products = $category->products->toArray();
 
-        return view('single_category', compact('category', 'products'));
+        return view('single_category', compact('category'));
     }
 
     // add category page

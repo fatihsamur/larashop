@@ -3,7 +3,10 @@
 
 
 
-@livewire('single-category-product-list', ['category' => $category, 'products' => $products])
+@livewire('single-category-product-list', ['category' => $category])
+
+
+
 
 @livewire('shopping-cart')
 

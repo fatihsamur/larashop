@@ -30,15 +30,15 @@ single category sayfasında add shop yapınca oraya redirect edebilsin. hangi
 
 
 
-single product page yapılacak...
 
-faker a category eklenecek
+faker a category eklenecek  -done
 
-
-product search bar
+product search bar -done
 
 checkout sistemiyle sandboxtan ödeme yapılabilsin
 
 dashboard frontendi toparlanacak -> tailwind componentle
 
 routelara auth yap admin ulaşacağı routelar
+
+single product page yapılacak...

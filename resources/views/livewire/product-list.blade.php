@@ -6,8 +6,34 @@
     </div>
     @endif
 
+    {{-- search box start --}}
+    <div class="flex justify-center mt-6">
+      <div class=" xl:w-96">
+        <input wire:model="search" type="search" class="
+        form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      " id="exampleSearch" placeholder="Search Products" />
+      </div>
+    </div>
+    {{-- search box end --}}
 
-    <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+
+
+
+    <div class="max-w-2xl mx-auto py-4 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
       <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Products</h2>
 
       <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
