@@ -18,7 +18,7 @@ class ProductController extends Controller
     // admin functions
     public function dashboardPage()
     {
-        $products = Product::all();
+        $products = DB::table('products')->paginate(12);
         $categories = Category::all();
         return view('dashboard', compact('products', 'categories'));
     }

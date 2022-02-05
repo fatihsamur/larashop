@@ -68,9 +68,4 @@ class ShoppingCart extends Component
     {
         Cart::remove($rowId);
     }
-
-    public function alert()
-    {
-        dd("bok ye");
-    }
 }

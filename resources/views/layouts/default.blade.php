@@ -2,6 +2,7 @@
 <html>
 <head>
   @include('includes.head')
+  @yield('styles')
 </head>
 <body>
 
@@ -13,6 +14,7 @@
 
 
 
+  @yield('scripts')
   @livewireScripts
 
 </body>

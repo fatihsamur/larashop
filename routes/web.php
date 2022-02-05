@@ -4,6 +4,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StripeController;
 use App\Http\Livewire\ShoppingCart;
 use App\Http\Livewire\SingleCategoryProductList;
 use Illuminate\Http\Request;
@@ -93,3 +94,8 @@ Route::post('/update_category/{id}', [
     CategoryController::class,
     'updateCategory',
 ])->name('update_category');
+
+
+// STRIPE
+Route::get('stripe', [StripeController::class, 'stripe'])->name('stripe');
+Route::post('stripe', [StripeController::class, 'stripePost'])->name('stripe.post');

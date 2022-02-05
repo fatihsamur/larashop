@@ -6,6 +6,7 @@
     </div>
     @endif
 
+
     {{-- search box start --}}
     <div class="flex justify-center mt-6">
       <div class=" xl:w-96">

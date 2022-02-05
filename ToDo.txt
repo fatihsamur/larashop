@@ -28,17 +28,14 @@ crashed photolara default image gösterilecek - (single cat page'de hata var) -d
 single category sayfasında add shop yapınca oraya redirect edebilsin. hangi
  sayfadaysa o sayfaya redirect etsin !! -done
 
-
-
-
 faker a category eklenecek  -done
 
 product search bar -done
 
-checkout sistemiyle sandboxtan ödeme yapılabilsin
+checkout sistemiyle sandboxtan ödeme yapılabilsin -done
 
-dashboard frontendi toparlanacak -> tailwind componentle
+dashboardda productlara pagination 
 
 routelara auth yap admin ulaşacağı routelar
 
-single product page yapılacak...
+single product page yapılacak... optional

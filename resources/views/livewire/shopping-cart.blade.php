@@ -99,13 +99,17 @@
           </div>
 
           <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
+
+            @if(!$cartItems->isEmpty())
             <div class="flex justify-between text-base font-medium text-gray-900">
               <p>Subtotal</p>
               <p> {{ \Gloudemans\Shoppingcart\Facades\Cart::priceTotal(); }} </p>
-
             </div>
+
+
             <div class="mt-6">
-              <a href="#" class="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">Checkout</a>
+              <a href="{{ route('stripe') }}" class="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">Checkout</a>
+
             </div>
             <div class="mt-6 flex justify-center text-sm text-center text-gray-500">
               <p>
@@ -113,6 +117,8 @@
 
               </p>
             </div>
+            @endif
+
           </div>
         </div>
       </div>
