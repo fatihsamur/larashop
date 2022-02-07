@@ -34,8 +34,8 @@ product search bar -done
 
 checkout sistemiyle sandboxtan ödeme yapılabilsin -done
 
-dashboardda productlara pagination 
+dashboardda productlara pagination -done
 
-routelara auth yap admin ulaşacağı routelar
+routelara auth yap admin ulaşacağı routelar -done
 
 single product page yapılacak... optional
