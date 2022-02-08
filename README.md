@@ -36,8 +36,8 @@ php artisan migrate
 php artisan serve
 ```
 
-## Additionally, to be able use Stripe payment functionality, get your STRIPE_KEY and STRIPE_SECRET 
-## from your Stripe Dashboard. (If you don't have an acoount first signup the stripe and get your credentials.)
+## Additionally, to be able use Stripe payment functionality, get your STRIPE_KEY and STRIPE_SECRET
+from your Stripe Dashboard. (If you don't have an acoount first signup the stripe and get your credentials.)
 
 
 
