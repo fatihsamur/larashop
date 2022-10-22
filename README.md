@@ -2,8 +2,6 @@
 
 ## Simple Ecommerce App using Laravel/Livewire
 
-## live demo on AWS: https://13.40.149.255/
-
 # Usage on local:
 
 ## 1- Clone the repository to your local development environment
